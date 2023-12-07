@@ -33,7 +33,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
 
-test:
+  test:
     name: Test API Automation
     needs: build
     steps:

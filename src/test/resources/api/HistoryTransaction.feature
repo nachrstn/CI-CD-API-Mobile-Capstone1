@@ -13,8 +13,6 @@ Feature: History Transaction
     When I send GET HTTP request all transactions invalid endpoint
     Then I receive response code 404 for Get all transactions invalid endpoint
 
-
-
   Scenario: POST - Post create new payment success
     Given I set POST endpoint create new payment
     When I send POST HTTP request create new payment

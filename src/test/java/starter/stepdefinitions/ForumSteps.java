@@ -13,6 +13,8 @@ public class ForumSteps {
     @Steps
     GetForumByPatientID GetForumByPatientID;
     @Steps
+    GetForumByID GetForumByID;
+    @Steps
     GetSearchForum GetSearchForum;
     @Steps
     PostCreateNewForum PostCreateNewForum;
@@ -52,6 +54,20 @@ public class ForumSteps {
         GetForumByPatientID.resCode200GetForumByPatientID();
     }
 
+
+
+    @Given("I set GET endpoint forum by id")
+    public void setGetEndpointForumByID(){
+        GetForumByID.setGetEndpointForumByID();
+    }
+    @When("I send GET HTTP request forum by id")
+    public void sendGetRequestForumByID(){
+        GetForumByID.sendGetRequestForumByID();
+    }
+    @Then("I receive response code 200 for get forum by id")
+    public void resCode200GetForumByID(){
+        GetForumByID.resCode200GetForumByID();
+    }
 
 
     @Given("I set GET endpoint search forum")

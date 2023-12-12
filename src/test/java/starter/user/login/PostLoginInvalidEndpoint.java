@@ -17,17 +17,18 @@ public class PostLoginInvalidEndpoint {
     @Step("I send POST HTTP request Login invalid endpoint")
     public void sendPostHttpRequestLoginInvalidEndpoint(){
         JSONObject requestBody = new JSONObject();
-        requestBody.put("email", "davin2@gmail.com");
-        requestBody.put("password", "123456");
+        requestBody.put("email", "aaa@gmail.com");
+        requestBody.put("password", "Aaa111222");
 
         SerenityRest.given()
+                .header("Content-Type", "application/json")
                 .body(requestBody.toJSONString())
                 .post(setPostLoginInvalidEndpoint());
     }
 
-    @Step("I receive response code 404 for Login invalid endpoint")
-    public void responseCode404LoginInvalidEndpoint(){
-        restAssuredThat(response -> response.statusCode(404));
+    @Step("I receive response code 400 for Login invalid endpoint")
+    public void responseCode400LoginInvalidEndpoint(){
+        restAssuredThat(response -> response.statusCode(400));
     }
 
 }

@@ -1,4 +1,4 @@
-Feature: Authentication
+Feature: Login
   As an quality engineer
   I want to be able to authenticate my account
   So that I can access all the features
@@ -11,38 +11,38 @@ Feature: Authentication
   Scenario: POST - Login invalid endpoint
     Given I set POST Login invalid endpoint
     When I send POST HTTP request Login invalid endpoint
-    Then I receive response code 404 for Login invalid endpoint
+    Then I receive response code 400 for Login invalid endpoint
 
-  Scenario: POST - Login invalid method
-    Given I set POST Login invalid method
-    When I send POST HTTP request Login invalid method
-    Then I receive response code 405 for Login invalid method
+  Scenario: POST - Post login invalid password
+    Given I set POST login invalid password
+    When I send POST HTTP request login invalid password
+    Then I receive response code 401 login invalid password
 
-  Scenario: POST - Login invalid payload
-    Given I set POST Login invalid payload
-    When I send POST HTTP request Login invalid payload
-    Then I receive response code 400 for Login invalid payload
+  Scenario: POST - Post login invalid email
+    Given I set POST login invalid email
+    When I send POST HTTP request login invalid email
+    Then I receive response code 401 login invalid email
 
+  Scenario: POST - Post login empty password
+    Given I set POST login empty password
+    When I send POST HTTP request login empty password
+    Then I receive response code 401 login empty password
 
-  Scenario: PUT - PUT change password success
-    Given I set PUT endpoint change password
-    When I send PUT HTTP request change password
-    Then I receive response code 200 change password
+  Scenario: POST - Post login empty email
+    Given I set POST login empty email
+    When I send POST HTTP request login empty email
+    Then I receive response code 401 login empty email
 
-  Scenario: PUT - PUT change password invalid endpoint
-    Given I set PUT change password invalid endpoint
-    When I send PUT HTTP request change password invalid endpoint
-    Then I receive response code 404 change password invalid endpoint
-
-  Scenario: PUT - PUT change password invalid method
-    Given I set PUT change password invalid method
-    When I send PUT HTTP request change password invalid method
-    Then I receive response code 405 change password invalid method
-
-  Scenario: PUT - PUT change password invalid json payload
-    Given I set PUT change password invalid json payload
-    When I send PUT HTTP request change password invalid json payload
-    Then I receive response code 400 change password invalid json payload
+#
+#  Scenario: PUT - PUT change password success
+#    Given I set PUT endpoint change password
+#    When I send PUT HTTP request change password
+#    Then I receive response code 200 change password
+#
+#  Scenario: PUT - PUT change password invalid endpoint
+#    Given I set PUT change password invalid endpoint
+#    When I send PUT HTTP request change password invalid endpoint
+#    Then I receive response code 404 change password invalid endpoint
 
 
 

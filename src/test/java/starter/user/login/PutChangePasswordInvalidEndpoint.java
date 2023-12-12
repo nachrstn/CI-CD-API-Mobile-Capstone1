@@ -7,7 +7,7 @@ import org.json.simple.JSONObject;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class PutChangePasswordInvalidEndpoint {
-    protected static String url = "https://dev.reprohealth.my.id";
+    protected static String url = "https://dev.reprohealth.my.id/users/change-passw0rd";
 
     @Step("I set PUT change password invalid endpoint")
     public String setPutChangePasswordInvalidEndpoint(){

@@ -7,7 +7,7 @@ import org.json.simple.JSONObject;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class PutChangePasswordInvalidJsonPayload {
-    protected String url = "https://dev.reprohealth.my.id/users/signup";
+    protected String url = "https://dev.reprohealth.my.id/users/changePassword";
 
     @Step("I set PUT change password invalid json payload")
     public String setPutChangePasswordInvalidJsonPayload(){
@@ -17,11 +17,11 @@ public class PutChangePasswordInvalidJsonPayload {
     @Step("I send PUT HTTP request change password invalid json payload")
     public void sendPutRequestChangePasswordInvalidJsonPayload(){
         JSONObject requestBody = new JSONObject();
-        requestBody.put("email", "davin11@gmail.com");
-        requestBody.put("password", 1234567);
+        requestBody.put("email", "aaa@gmail.com");
+        requestBody.put("password", "Aaa111222");
 
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJuYW1lIjoiZGF2aW4iLCJyb2xlIjoidXNlciIsInVzZXJfaWQiOiI2ODBhZjU4Yi04NzFmLTQ4NDUtYTFiZC03MmZjYzFhZjkzMTAifQ.J1ommGCOfzb4SkdnBtlcYOiXP0Fkjl-Flnqsw3JK8Lo")
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJuYW1lIjoiQWFhIiwicm9sZSI6InVzZXIiLCJ1c2VyX2lkIjoiZjRkZjU3YTQtMDRjZi00YjgxLTlhZWYtNThkYmNlNGFhMzdjIn0.YFVpLwaAGIPaRSpBfWiCVvKyYD3fWJeZQ_z-Sg798cE")
                 .body(requestBody.toJSONString())
                 .put(setPutChangePasswordInvalidJsonPayload());
     }

@@ -6,7 +6,7 @@ import net.thucydides.core.annotations.Step;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class GetAllDoctorsBySpecialists {
-    protected static String url = "https://dev.reprohealth.my.id";
+    protected static String url = "https://dev.reprohealth.my.id/specialists/0a8f12c6-1244-43e6-a704-126b173a8732/doctors";
 
     @Step("I set GET endpoint all doctors by specialists ")
     public String setGetEndpointAllDoctorsBySpecialists(){
@@ -16,7 +16,7 @@ public class GetAllDoctorsBySpecialists {
     @Step("I send GET HTTP request all doctors by specialists")
     public void sendGetRequestAllDoctorsBySpecialists(){
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGdWxsbmFtZSI6IkZpcnN0bmFtZSBMYXN0bmFtZSIsIkVtYWlsIjoic29tZW9uZWVsc2VAbWFpbC5jb20ifQ.J8OKzFM-6sLno5L32c-jqtJ1FhEX4C3i2E0agKsWvi8")
+                .header("Content-Type", "application/json")
                 .when()
                 .get(setGetEndpointAllDoctorsBySpecialists());
     }

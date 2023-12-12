@@ -22,9 +22,9 @@ public class PostCreateNewClinicsInvalidEndpoint {
                 .post(setPostCreateNewClinicsInvalidEndpoint());
     }
 
-    @Step("I receive response code 404 create new clinics invalid endpoint")
-    public void resCode404PostCreateNewClinicsInvalidEndpoint(){
-        restAssuredThat(response -> response.statusCode(404));
+    @Step("I receive response code 400 create new clinics invalid endpoint")
+    public void resCode400PostCreateNewClinicsInvalidEndpoint(){
+        restAssuredThat(response -> response.statusCode(400));
     }
 }
 

@@ -12,27 +12,17 @@ public class ForumNegativeSteps {
     @Steps
     GetAllForumInvalidEndpoint GetAllForumInvalidEndpoint;
     @Steps
-    GetAllForumInvalidMethod GetAllForumInvalidMethod;
+    GetForumByIDInvalidEndpoint GetForumByIDInvalidEndpoint;
     @Steps
     GetForumByPatientIDInvalidEndpoint GetForumByPatientIDInvalidEndpoint;
     @Steps
-    GetForumByPatientIDInvalidMethod GetForumByPatientIDInvalidMethod;
-    @Steps
     GetSearchForumInvalidEndpoint GetSearchForumInvalidEndpoint;
-    @Steps
-    GetSearchForumInvalidMethod GetSearchForumInvalidMethod;
     @Steps
     GetSearchForumInvalidSearchKeyword GetSearchForumInvalidSearchKeyword;
     @Steps
     PostCreateNewForumInvalidEndpoint PostCreateNewForumInvalidEndpoint;
     @Steps
-    PostCreateNewForumInvalidMethod PostCreateNewForumInvalidMethod;
-    @Steps
-    PostCreateNewForumInvalidJsonPayload PostCreateNewForumInvalidJsonPayload;
-    @Steps
     DeleteForumInvalidEndpoint DeleteForumInvalidEndpoint;
-    @Steps
-    DeleteForumInvalidMethod DeleteForumInvalidMethod;
 
 
 
@@ -47,22 +37,24 @@ public class ForumNegativeSteps {
     public void sendGetRequestAllForum(){
         GetAllForumInvalidEndpoint.sendGetRequestAllForumInvalidEndpoint();
     }
-    @Then("I receive response code 404 for Get all forum invalid endpoint")
-    public void resCode200GetAllForum(){
-        GetAllForumInvalidEndpoint.resCode404GetAllForumInvalidEndpoint();
+    @Then("I receive response code 400 for Get all forum invalid endpoint")
+    public void resCode400GetAllForum(){
+        GetAllForumInvalidEndpoint.resCode400GetAllForumInvalidEndpoint();
     }
 
-    @Given("I set GET all forum invalid method")
-    public void setGetMethodAllForum(){
-        GetAllForumInvalidMethod.setGetAllForumInvalidMethod();
+
+
+    @Given("I set GET forum by id invalid endpoint")
+    public void setGetEndpointForumByID(){
+        GetForumByIDInvalidEndpoint.setGetForumByIDInvalidEndpoint();
     }
-    @When("I send GET HTTP request all forum invalid method")
-    public void sendGetRequestAllForumInvalidMethod(){
-        GetAllForumInvalidMethod.sendGetRequestAllForumInvalidMethod();
+    @When("I send GET HTTP request forum by id invalid endpoint")
+    public void sendGetRequestForumByID(){
+        GetForumByIDInvalidEndpoint.sendGetRequestForumByIDInvalidEndpoint();
     }
-    @Then("I receive response code 405 for Get all forum invalid method")
-    public void resCode405GetAllForumInvalidMethod(){
-        GetAllForumInvalidMethod.resCode405GetAllForumInvalidMethod();
+    @Then("I receive response code 400 for Get forum by id invalid endpoint")
+    public void resCode200GetForumByID(){
+        GetForumByIDInvalidEndpoint.resCode400GetForumByIDInvalidEndpoint();
     }
 
 
@@ -76,23 +68,12 @@ public class ForumNegativeSteps {
     public void sendGetRequestForumByPatientID(){
         GetForumByPatientIDInvalidEndpoint.sendGetRequestForumByPatientIDInvalidEndpoint();
     }
-    @Then("I receive response code 404 for Get forum by Patient id invalid endpoint")
-    public void resCode200GetForumByPatientID(){
-        GetForumByPatientIDInvalidEndpoint.resCode404GetForumByPatientIDInvalidEndpoint();
+    @Then("I receive response code 400 for Get forum by Patient id invalid endpoint")
+    public void resCode400GetForumByPatientID(){
+        GetForumByPatientIDInvalidEndpoint.resCode400GetForumByPatientIDInvalidEndpoint();
     }
 
-    @Given("I set GET forum by Patient id invalid method")
-    public void setGetMethodForumByPatientID(){
-        GetForumByPatientIDInvalidMethod.setGetForumByPatientIDInvalidMethod();
-    }
-    @When("I send GET HTTP request forum by Patient id invalid method")
-    public void sendGetRequestForumByPatientIDInvalidMethod(){
-        GetForumByPatientIDInvalidMethod.sendGetRequestForumByPatientIDInvalidMethod();
-    }
-    @Then("I receive response code 405 for Get forum by Patient id invalid method")
-    public void resCode405GetForumByPatientIDInvalidMethod(){
-        GetForumByPatientIDInvalidMethod.resCode405GetForumByPatientIDInvalidMethod();
-    }
+
 
 
 
@@ -104,23 +85,12 @@ public class ForumNegativeSteps {
     public void sendGetRequestSearchForum(){
         GetSearchForumInvalidEndpoint.sendGetRequestSearchForumInvalidEndpoint();
     }
-    @Then("I receive response code 404 for Get search forum invalid endpoint")
-    public void resCode200GetSearchForum(){
-        GetSearchForumInvalidEndpoint.resCode404GetSearchForumInvalidEndpoint();
+    @Then("I receive response code 400 for Get search forum invalid endpoint")
+    public void resCode400GetSearchForum(){
+        GetSearchForumInvalidEndpoint.resCode400GetSearchForumInvalidEndpoint();
     }
 
-    @Given("I set GET search forum invalid method")
-    public void setGetMethodSearchForum(){
-        GetSearchForumInvalidMethod.setGetSearchForumInvalidMethod();
-    }
-    @When("I send GET HTTP request search forum invalid method")
-    public void sendGetRequestSearchForumInvalidMethod(){
-        GetSearchForumInvalidMethod.sendGetRequestSearchForumInvalidMethod();
-    }
-    @Then("I receive response code 405 for Get search forum invalid method")
-    public void resCode405GetSearchForumInvalidMethod(){
-        GetSearchForumInvalidMethod.resCode405GetSearchForumInvalidMethod();
-    }
+
 
     @Given("I set GET search forum invalid search keyword")
     public void setGetSearchForumInvalidSearchKeyword(){
@@ -145,35 +115,10 @@ public class ForumNegativeSteps {
         PostCreateNewForumInvalidEndpoint.sendPostRequestCreateNewForumInvalidEndpoint();
     }
     @Then("I receive response code 404 create new forum invalid endpoint")
-    public void resCode200PostCreateNewForum(){
+    public void resCode404PostCreateNewForum(){
         PostCreateNewForumInvalidEndpoint.resCode404PostCreateNewForumInvalidEndpoint();
     }
 
-    @Given("I set POST create new forum invalid method")
-    public void setPostMethodCreateNewForum(){
-        PostCreateNewForumInvalidMethod.setPostCreateNewForumInvalidMethod();
-    }
-    @When("I send POST HTTP request create new forum invalid method")
-    public void sendPostRequestCreateNewForumInvalidMethod(){
-        PostCreateNewForumInvalidMethod.sendPostRequestCreateNewForumInvalidMethod();
-    }
-    @Then("I receive response code 405 create new forum invalid method")
-    public void resCode405PostCreateNewForumInvalidMethod(){
-        PostCreateNewForumInvalidMethod.resCode405PostCreateNewForumInvalidMethod();
-    }
-
-    @Given("I set POST create new forum invalid json payload")
-    public void setPostCreateNewForumInvalidJsonPayload(){
-        PostCreateNewForumInvalidJsonPayload.setPostCreateNewForumInvalidJsonPayload();
-    }
-    @When("I send POST HTTP request create new forum invalid json payload")
-    public void sendPOSTRequestCreateNewForumInvalidJsonPayload(){
-        PostCreateNewForumInvalidJsonPayload.sendPOSTRequestCreateNewForumInvalidJsonPayload();
-    }
-    @Then("I receive response code 400 create new forum invalid json payload")
-    public void resCode400CreateNewForumInvalidJsonPayload(){
-        PostCreateNewForumInvalidJsonPayload.resCode400CreateNewForumInvalidJsonPayload();
-    }
 
 
 
@@ -185,23 +130,11 @@ public class ForumNegativeSteps {
     public void sendDeleteRequestForum(){
         DeleteForumInvalidEndpoint.sendDeleteRequestForumInvalidEndpoint();
     }
-    @Then("I receive response code 404 forum invalid endpoint")
-    public void resCode200DeleteForum(){
-        DeleteForumInvalidEndpoint.resCode404DeleteForumInvalidEndpoint();
+    @Then("I receive response code 400 forum invalid endpoint")
+    public void resCode400DeleteForum(){
+        DeleteForumInvalidEndpoint.resCode400DeleteForumInvalidEndpoint();
     }
 
-    @Given("I set DELETE forum invalid method")
-    public void setDeleteMethodForum(){
-        DeleteForumInvalidMethod.setDeleteForumInvalidMethod();
-    }
-    @When("I send DELETE HTTP request forum invalid method")
-    public void sendDeleteRequestForumInvalidMethod(){
-        DeleteForumInvalidMethod.sendDeleteRequestForumInvalidMethod();
-    }
-    @Then("I receive response code 405 forum invalid method")
-    public void resCode405DeleteForumInvalidMethod(){
-        DeleteForumInvalidMethod.resCode405DeleteForumInvalidMethod();
-    }
 
 
 

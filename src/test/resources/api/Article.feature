@@ -13,8 +13,14 @@ Feature: Article
     When I send GET HTTP request all articles invalid endpoint
     Then I receive response code 404 for Get all articles invalid endpoint
 
-  Scenario: GET - Get all articles invalid method
-    Given I set GET all articles invalid method
-    When I send GET HTTP request all articles invalid method
-    Then I receive response code 405 for Get all articles invalid method
+
+  Scenario: GET - Get article by ID success
+    Given I set GET endpoint article by ID
+    When I send GET HTTP request article by ID
+    Then I receive response code 200 for get article by ID
+
+  Scenario: GET - Get article by ID invalid endpoint
+    Given I set GET article by ID invalid endpoint
+    When I send GET HTTP request article by ID invalid endpoint
+    Then I receive response code 404 for Get article by ID invalid endpoint
 

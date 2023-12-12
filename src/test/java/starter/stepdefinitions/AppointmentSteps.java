@@ -153,9 +153,9 @@ public class AppointmentSteps {
     public void sendPostRequestCreateNewConsultation(){
         PostCreateNewConsultation.sendPostRequestCreateNewConsultation();
     }
-    @Then("I receive response code 200 create new consultation")
-    public void resCode200PostCreateNewConsultation(){
-        PostCreateNewConsultation.resCode200PostCreateNewConsultation();
+    @Then("I receive response code 201 create new consultation")
+    public void resCode201PostCreateNewConsultation(){
+        PostCreateNewConsultation.resCode201PostCreateNewConsultation();
     }
 
 }

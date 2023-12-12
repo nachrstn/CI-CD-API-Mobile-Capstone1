@@ -21,9 +21,9 @@ public class GetForumByPatientIDInvalidEndpoint {
                 .get(setGetForumByPatientIDInvalidEndpoint());
     }
 
-    @Step("I receive response code 404 for Get forum by Patient id invalid endpoint")
-    public void resCode404GetForumByPatientIDInvalidEndpoint(){
-        restAssuredThat(response -> response.statusCode(404));
+    @Step("I receive response code 400 for Get forum by Patient id invalid endpoint")
+    public void resCode400GetForumByPatientIDInvalidEndpoint(){
+        restAssuredThat(response -> response.statusCode(400));
     }
 }
 

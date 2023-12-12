@@ -10,15 +10,15 @@ public class LoginNegativeSteps {
     @Steps
     PostLoginInvalidEndpoint PostLoginInvalidEndpoint;
     @Steps
-    PostLoginInvalidMethod PostLoginInvalidMethod;
+    PostLoginInvalidPassword PostLoginInvalidPassword;
     @Steps
-    PostLoginInvalidPayload PostLoginInvalidPayload;
+    PostLoginInvalidEmail PostLoginInvalidEmail;
+    @Steps
+    PostLoginEmptyPassword PostLoginEmptyPassword;
+    @Steps
+    PostLoginEmptyEmail PostLoginEmptyEmail;
     @Steps
     PutChangePasswordInvalidEndpoint PutChangePasswordInvalidEndpoint;
-    @Steps
-    PutChangePasswordInvalidMethod PutChangePasswordInvalidMethod;
-    @Steps
-    PutChangePasswordInvalidJsonPayload PutChangePasswordInvalidJsonPayload;
 
 
     @Given("I set POST Login invalid endpoint")
@@ -29,38 +29,64 @@ public class LoginNegativeSteps {
     public void sendPostHttpRequestLoginInvalidEndpoint(){
         PostLoginInvalidEndpoint.sendPostHttpRequestLoginInvalidEndpoint();
     }
-    @Then("I receive response code 404 for Login invalid endpoint")
-    public void responseCode404LoginInvalidEndpoint(){
-        PostLoginInvalidEndpoint.responseCode404LoginInvalidEndpoint();
+    @Then("I receive response code 400 for Login invalid endpoint")
+    public void responseCode400LoginInvalidEndpoint(){
+        PostLoginInvalidEndpoint.responseCode400LoginInvalidEndpoint();
+    }
+
+    @Given("I set POST login invalid password")
+    public void setPostLoginInvalidPassword(){
+        PostLoginInvalidPassword.setPostLoginInvalidPassword();
+    }
+    @When("I send POST HTTP request login invalid password")
+    public void sendPostRequestLoginInvalidPassword(){
+        PostLoginInvalidPassword.sendPostRequestLoginInvalidPassword();
+    }
+    @Then("I receive response code 401 login invalid password")
+    public void resCode401PostLoginInvalidPassword(){
+        PostLoginInvalidPassword.resCode401PostLoginInvalidPassword();
+    }
+
+    @Given("I set POST login invalid email")
+    public void setPostLoginInvalidEmail(){
+        PostLoginInvalidEmail.setPostLoginInvalidEmail();
+    }
+    @When("I send POST HTTP request login invalid email")
+    public void sendPOSTRequestLoginInvalidEmail(){
+        PostLoginInvalidEmail.sendPOSTRequestLoginInvalidEmail();
+    }
+    @Then("I receive response code 401 login invalid email")
+    public void resCode401LoginInvalidEmail(){
+        PostLoginInvalidEmail.resCode401LoginInvalidEmail();
     }
 
 
-    @Given("I set POST Login invalid method")
-    public void setPostLoginInvalidMethod(){
-        PostLoginInvalidMethod.setPostLoginInvalidMethod();
+    @Given("I set POST login empty password")
+    public void setPostLoginEmptyPassword(){
+        PostLoginEmptyPassword.setPostLoginEmptyPassword();
     }
-    @When("I send POST HTTP request Login invalid method")
-    public void sendPostHttpRequestLoginInvalidMethod(){
-        PostLoginInvalidMethod.sendPostHttpRequestLoginInvalidMethod();
+    @When("I send POST HTTP request login empty password")
+    public void sendPostRequestLoginEmptyPassword(){
+        PostLoginEmptyPassword.sendPostRequestLoginEmptyPassword();
     }
-    @Then("I receive response code 405 for Login invalid method")
-    public void responseCode405LoginInvalidMethod(){
-        PostLoginInvalidMethod.responseCode405LoginInvalidMethod();
+    @Then("I receive response code 401 login empty password")
+    public void resCode401PostLoginEmptyPassword(){
+        PostLoginEmptyPassword.resCode401PostLoginEmptyPassword();
     }
 
+    @Given("I set POST login empty email")
+    public void setPostLoginEmptyEmail(){
+        PostLoginEmptyEmail.setPostLoginEmptyEmail();
+    }
+    @When("I send POST HTTP request login empty email")
+    public void sendPOSTRequestLoginEmptyEmail(){
+        PostLoginEmptyEmail.sendPOSTRequestLoginEmptyEmail();
+    }
+    @Then("I receive response code 401 login empty email")
+    public void resCode401LoginEmptyEmail(){
+        PostLoginEmptyEmail.resCode401LoginEmptyEmail();
+    }
 
-    @Given("I set POST Login invalid payload")
-    public void setPostLoginInvalidPayload(){
-        PostLoginInvalidPayload.setPostLoginInvalidPayload();
-    }
-    @When("I send POST HTTP request Login invalid payload")
-    public void sendPostHttpRequestLoginInvalidPayload(){
-        PostLoginInvalidPayload.sendPostHttpRequestLoginInvalidPayload();
-    }
-    @Then("I receive response code 400 for Login invalid payload")
-    public void responseCode400LoginInvalidPayload(){
-        PostLoginInvalidPayload.responseCode400LoginInvalidPayload();
-    }
 
 
 
@@ -77,31 +103,8 @@ public class LoginNegativeSteps {
         PutChangePasswordInvalidEndpoint.resCode404PutChangePasswordInvalidEndpoint();
     }
 
-    @Given("I set PUT change password invalid method")
-    public void setPutMethodChangePassword(){
-        PutChangePasswordInvalidMethod.setPutChangePasswordInvalidMethod();
-    }
-    @When("I send PUT HTTP request change password invalid method")
-    public void sendPutRequestChangePasswordInvalidMethod(){
-        PutChangePasswordInvalidMethod.sendPutRequestChangePasswordInvalidMethod();
-    }
-    @Then("I receive response code 405 change password invalid method")
-    public void resCode405PutChangePasswordInvalidMethod(){
-        PutChangePasswordInvalidMethod.resCode405PutChangePasswordInvalidMethod();
-    }
 
-    @Given("I set PUT change password invalid json payload")
-    public void setPutChangePasswordInvalidJsonPayload(){
-        PutChangePasswordInvalidJsonPayload.setPutChangePasswordInvalidJsonPayload();
-    }
-    @When("I send PUT HTTP request change password invalid json payload")
-    public void sendPUTRequestChangePasswordInvalidJsonPayload(){
-        PutChangePasswordInvalidJsonPayload.sendPutRequestChangePasswordInvalidJsonPayload();
-    }
-    @Then("I receive response code 400 change password invalid json payload")
-    public void resCode400ChangePasswordInvalidJsonPayload(){
-        PutChangePasswordInvalidJsonPayload.resCode400ChangePasswordInvalidJsonPayload();
-    }
+
 
 
 }

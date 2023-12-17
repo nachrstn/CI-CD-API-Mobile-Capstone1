@@ -56,9 +56,9 @@ public class ProfileSteps {
     public void sendPostRequestCreateNewPatient(){
         PostCreateNewPatient.sendPostRequestCreateNewPatient();
     }
-    @Then("I receive response code 200 create new patient")
-    public void resCode200PostCreateNewPatient(){
-        PostCreateNewPatient.resCode200PostCreateNewPatient();
+    @Then("I receive response code 201 create new patient")
+    public void resCode201PostCreateNewPatient(){
+        PostCreateNewPatient.resCode201PostCreateNewPatient();
     }
 
     @Given("I set DELETE endpoint patient by id")

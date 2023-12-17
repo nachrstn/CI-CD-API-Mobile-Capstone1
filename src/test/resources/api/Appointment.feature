@@ -112,6 +112,20 @@ Feature: Appointment
     Then I receive response code 404 create new consultation invalid endpoint
 
 
+  Scenario: POST - Post create new consultation invalid session
+    Given I set POST create new consultation invalid session
+    When I send POST HTTP request create new consultation invalid session
+    Then I receive response code 400 create new consultation invalid session
+
+  Scenario: POST - Post create new consultation invalid ID doctor
+    Given I set POST create new consultation invalid ID doctor
+    When I send POST HTTP request create new consultation invalid ID doctor
+    Then I receive response code 400 create new consultation invalid ID doctor
+
+  Scenario: POST - Post create new consultation invalid ID patient
+    Given I set POST create new consultation invalid ID patient
+    When I send POST HTTP request create new consultation invalid ID patient
+    Then I receive response code 400 create new consultation invalid ID patient
 
 
 

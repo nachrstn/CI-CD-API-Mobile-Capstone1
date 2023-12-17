@@ -30,24 +30,17 @@ Feature: Profile
   Scenario: POST - Post create new patient success
     Given I set POST endpoint create new patient
     When I send POST HTTP request create new patient
-    Then I receive response code 200 create new patient
+    Then I receive response code 201 create new patient
 
   Scenario: POST - Post create new patient invalid endpoint
     Given I set POST create new patient invalid endpoint
     When I send POST HTTP request create new patient invalid endpoint
     Then I receive response code 404 create new patient invalid endpoint
 
-
-
-  Scenario: DELETE - Delete patient by id success
-    Given I set DELETE endpoint patient by id
-    When I send DELETE HTTP request patient by id
-    Then I receive response code 200 patient by id
-
-  Scenario: DELETE - Delete patient by id invalid endpoint
-    Given I set DELETE patient by id invalid endpoint
-    When I send DELETE HTTP request patient by id invalid endpoint
-    Then I receive response code 404 patient by id invalid endpoint
+#  Scenario: POST - Post create new patient with blank body exclude date of birth
+#    Given I set POST create new patient with blank body exclude date of birth
+#    When I send POST HTTP request create new patient with blank body exclude date of birth
+#    Then I receive response code 400 create new patient with blank body exclude date of birth
 
 
 
@@ -61,5 +54,14 @@ Feature: Profile
     When I send PUT HTTP request update patient profile invalid endpoint
     Then I receive response code 404 update patient profile invalid endpoint
 
+  Scenario: DELETE - Delete patient by id success
+    Given I set DELETE endpoint patient by id
+    When I send DELETE HTTP request patient by id
+    Then I receive response code 200 patient by id
+
+  Scenario: DELETE - Delete patient by id invalid endpoint
+    Given I set DELETE patient by id invalid endpoint
+    When I send DELETE HTTP request patient by id invalid endpoint
+    Then I receive response code 404 patient by id invalid endpoint
 
 

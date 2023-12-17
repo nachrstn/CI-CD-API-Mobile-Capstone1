@@ -13,27 +13,15 @@ public class ProfileNegativeSteps {
     @Steps
     GetAllPatientsInvalidEndpoint GetAllPatientsInvalidEndpoint;
     @Steps
-    GetAllPatientsInvalidMethod GetAllPatientsInvalidMethod;
-    @Steps
     GetPatientByIDInvalidEndpoint GetPatientByIDInvalidEndpoint;
-    @Steps
-    GetPatientByIDInvalidMethod GetPatientByIDInvalidMethod;
     @Steps
     PostCreateNewPatientInvalidEndpoint PostCreateNewPatientInvalidEndpoint;
     @Steps
-    PostCreateNewPatientInvalidMethod PostCreateNewPatientInvalidMethod;
-    @Steps
-    PostCreateNewPatientInvalidJsonPayload PostCreateNewPatientInvalidJsonPayload;
+    PostCreatePatientOnlyDateOfBirth PostCreatePatientOnlyDateOfBirth;
     @Steps
     DeletePatientByIDInvalidEndpoint DeletePatientByIDInvalidEndpoint;
     @Steps
-    DeletePatientByIDInvalidMethod DeletePatientByIDInvalidMethod;
-    @Steps
     PutUpdatePatientProfileInvalidEndpoint PutUpdatePatientProfileInvalidEndpoint;
-    @Steps
-    PutUpdatePatientProfileInvalidMethod PutUpdatePatientProfileInvalidMethod;
-    @Steps
-    PutUpdatePatientProfileInvalidJsonPayload PutUpdatePatientProfileInvalidJsonPayload;
 
 
 
@@ -51,19 +39,6 @@ public class ProfileNegativeSteps {
         GetAllPatientsInvalidEndpoint.resCode404GetAllPatientsInvalidEndpoint();
     }
 
-    @Given("I set GET all patients invalid method")
-    public void setGetMethodAllPatients(){
-        GetAllPatientsInvalidMethod.setGetAllPatientsInvalidMethod();
-    }
-    @When("I send GET HTTP request all patients invalid method")
-    public void sendGetRequestAllPatientsInvalidMethod(){
-        GetAllPatientsInvalidMethod.sendGetRequestAllPatientsInvalidMethod();
-    }
-    @Then("I receive response code 405 for Get all patients invalid method")
-    public void resCode405GetAllPatientsInvalidMethod(){
-        GetAllPatientsInvalidMethod.resCode405GetAllPatientsInvalidMethod();
-    }
-
 
 
     @Given("I set GET patient by id invalid endpoint")
@@ -77,19 +52,6 @@ public class ProfileNegativeSteps {
     @Then("I receive response code 404 for Get patient by id invalid endpoint")
     public void resCode200GetPatientByID(){
         GetPatientByIDInvalidEndpoint.resCode404GetPatientByIDInvalidEndpoint();
-    }
-
-    @Given("I set GET patient by id invalid method")
-    public void setGetMethodPatientByID(){
-        GetPatientByIDInvalidMethod.setGetPatientByIDInvalidMethod();
-    }
-    @When("I send GET HTTP request patient by id invalid method")
-    public void sendGetRequestPatientByIDInvalidMethod(){
-        GetPatientByIDInvalidMethod.sendGetRequestPatientByIDInvalidMethod();
-    }
-    @Then("I receive response code 405 for Get patient by id invalid method")
-    public void resCode405GetPatientByIDInvalidMethod(){
-        GetPatientByIDInvalidMethod.resCode405GetPatientByIDInvalidMethod();
     }
 
 
@@ -108,32 +70,18 @@ public class ProfileNegativeSteps {
         PostCreateNewPatientInvalidEndpoint.resCode404PostCreateNewPatientInvalidEndpoint();
     }
 
-    @Given("I set POST create new patient invalid method")
-    public void setPostMethodCreateNewPatient(){
-        PostCreateNewPatientInvalidMethod.setPostCreateNewPatientInvalidMethod();
+    @Given("I set POST create new patient with blank body exclude date of birth")
+    public void setPostCreatePatientOnlyDateOfBirth(){
+        PostCreatePatientOnlyDateOfBirth.setPostCreatePatientOnlyDateOfBirth();
     }
-    @When("I send POST HTTP request create new patient invalid method")
-    public void sendPostRequestCreateNewPatientInvalidMethod(){
-        PostCreateNewPatientInvalidMethod.sendPostRequestCreateNewPatientInvalidMethod();
+    @When("I send POST HTTP request create new patient with blank body exclude date of birth")
+    public void sendPOSTRequestCreatePatientOnlyDateOfBirth(){
+        PostCreatePatientOnlyDateOfBirth.sendPOSTRequestCreatePatientOnlyDateOfBirth();
     }
-    @Then("I receive response code 405 create new patient invalid method")
-    public void resCode405PostCreateNewPatientInvalidMethod(){
-        PostCreateNewPatientInvalidMethod.resCode405PostCreateNewPatientInvalidMethod();
+    @Then("I receive response code 400 create new patient with blank body exclude date of birth")
+    public void resCode400CreatePatientOnlyDateOfBirth(){
+        PostCreatePatientOnlyDateOfBirth.resCode400CreatePatientOnlyDateOfBirth();
     }
-
-    @Given("I set POST create new patient invalid json payload")
-    public void setPostCreateNewPatientInvalidJsonPayload(){
-        PostCreateNewPatientInvalidJsonPayload.setPostCreateNewPatientInvalidJsonPayload();
-    }
-    @When("I send POST HTTP request create new patient invalid json payload")
-    public void sendPOSTRequestCreateNewPatientInvalidJsonPayload(){
-        PostCreateNewPatientInvalidJsonPayload.sendPOSTRequestCreateNewPatientInvalidJsonPayload();
-    }
-    @Then("I receive response code 400 create new patient invalid json payload")
-    public void resCode400CreateNewPatientInvalidJsonPayload(){
-        PostCreateNewPatientInvalidJsonPayload.resCode400CreateNewPatientInvalidJsonPayload();
-    }
-
 
 
     @Given("I set DELETE patient by id invalid endpoint")
@@ -149,20 +97,6 @@ public class ProfileNegativeSteps {
         DeletePatientByIDInvalidEndpoint.resCode404DeletePatientByIDInvalidEndpoint();
     }
 
-    @Given("I set DELETE patient by id invalid method")
-    public void setDeleteMethodPatientByID(){
-        DeletePatientByIDInvalidMethod.setDeletePatientByIDInvalidMethod();
-    }
-    @When("I send DELETE HTTP request patient by id invalid method")
-    public void sendDeleteRequestPatientByIDInvalidMethod(){
-        DeletePatientByIDInvalidMethod.sendDeleteRequestPatientByIDInvalidMethod();
-    }
-    @Then("I receive response code 405 patient by id invalid method")
-    public void resCode405DeletePatientByIDInvalidMethod(){
-        DeletePatientByIDInvalidMethod.resCode405DeletePatientByIDInvalidMethod();
-    }
-
-
 
     @Given("I set PUT update patient profile invalid endpoint")
     public void setPutEndpointUpdatePatientProfile(){
@@ -177,30 +111,5 @@ public class ProfileNegativeSteps {
         PutUpdatePatientProfileInvalidEndpoint.resCode404PutUpdatePatientProfileInvalidEndpoint();
     }
 
-    @Given("I set PUT update patient profile invalid method")
-    public void setPutMethodUpdatePatientProfile(){
-        PutUpdatePatientProfileInvalidMethod.setPutUpdatePatientProfileInvalidMethod();
-    }
-    @When("I send PUT HTTP request update patient profile invalid method")
-    public void sendPutRequestUpdatePatientProfileInvalidMethod(){
-        PutUpdatePatientProfileInvalidMethod.sendPutRequestUpdatePatientProfileInvalidMethod();
-    }
-    @Then("I receive response code 405 update patient profile invalid method")
-    public void resCode405PutUpdatePatientProfileInvalidMethod(){
-        PutUpdatePatientProfileInvalidMethod.resCode405PutUpdatePatientProfileInvalidMethod();
-    }
-
-    @Given("I set PUT update patient profile invalid json payload")
-    public void setPutUpdatePatientProfileInvalidJsonPayload(){
-        PutUpdatePatientProfileInvalidJsonPayload.setPutUpdatePatientProfileInvalidJsonPayload();
-    }
-    @When("I send PUT HTTP request update patient profile invalid json payload")
-    public void sendPUTRequestUpdatePatientProfileInvalidJsonPayload(){
-        PutUpdatePatientProfileInvalidJsonPayload.sendPUTRequestUpdatePatientProfileInvalidJsonPayload();
-    }
-    @Then("I receive response code 400 update patient profile invalid json payload")
-    public void resCode400UpdatePatientProfileInvalidJsonPayload(){
-        PutUpdatePatientProfileInvalidJsonPayload.resCode400UpdatePatientProfileInvalidJsonPayload();
-    }
 
 }

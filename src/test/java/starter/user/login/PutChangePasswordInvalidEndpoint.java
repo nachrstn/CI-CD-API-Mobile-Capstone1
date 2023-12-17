@@ -16,9 +16,13 @@ public class PutChangePasswordInvalidEndpoint {
 
     @Step("I send PUT HTTP request change password invalid endpoint")
     public void sendPutRequestChangePasswordInvalidEndpoint(){
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("password", "Aaa111222");
+
         SerenityRest.given()
-                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGdWxsbmFtZSI6IkZpcnN0bmFtZSBMYXN0bmFtZSIsIkVtYWlsIjoic29tZW9uZWVsc2VAbWFpbC5jb20ifQ.J8OKzFM-6sLno5L32c-jqtJ1FhEX4C3i2E0agKsWvi8")
-                .when()
+                .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJuYW1lIjoiQWFhIiwicm9sZSI6InVzZXIiLCJ1c2VyX2lkIjoiZjRkZjU3YTQtMDRjZi00YjgxLTlhZWYtNThkYmNlNGFhMzdjIn0.YFVpLwaAGIPaRSpBfWiCVvKyYD3fWJeZQ_z-Sg798cE")
+                .contentType("application/json")
+                .body(requestBody.toJSONString())
                 .put(setPutChangePasswordInvalidEndpoint());
     }
 

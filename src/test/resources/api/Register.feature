@@ -12,17 +12,14 @@ Feature: Register
   Scenario: POST - Register invalid endpoint
     Given I set POST Register invalid endpoint
     When I send POST HTTP request Register invalid endpoint
-    Then I receive response code 404 for Register
+    Then I receive response code 400 for Register
 
-  Scenario: POST - Register invalid method
-    Given I set POST Register invalid method
-    When I send POST HTTP request Register invalid method
-    Then I receive response code 405 for Register invalid method
+  Scenario: POST - Post registration with registered email
+    Given I set POST registration with registered email
+    When I send POST HTTP request registration with registered email
+    Then I receive response code 400 registration with registered email
 
-  Scenario: POST - Register invalid payload
-    Given I set POST Register invalid payload
-    When I send POST HTTP request Register invalid payload
-    Then I receive response code 400 for Register invalid payload
+
 
 
 

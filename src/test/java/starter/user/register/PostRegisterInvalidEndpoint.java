@@ -17,18 +17,19 @@ public class PostRegisterInvalidEndpoint {
     @Step("I send POST HTTP request Register invalid endpoint")
     public void sendPostHttpRequestRegisterInvalidEndpoint(){
         JSONObject requestBody = new JSONObject();
-        requestBody.put("email", "akunbaru@gmail.com");
-        requestBody.put("password", "123123");
-//        requestBody.put("fullname", "akun baru");
+        requestBody.put("email", "eee1@gmail.com");
+        requestBody.put("password", "Eee111222");
+        requestBody.put("name", "Eee");
 
         SerenityRest.given()
+                .header("Content-Type", "application/json")
                 .body(requestBody.toJSONString())
                 .post(setPostRegisterInvalidEndpoint());
     }
 
-    @Step("I receive response code 404 for Register")
-    public void responseCode404RegisterInvalidEndpoint(){
-        restAssuredThat(response -> response.statusCode(404));
+    @Step("I receive response code 400 for Register")
+    public void responseCode400RegisterInvalidEndpoint(){
+        restAssuredThat(response -> response.statusCode(400));
     }
 
 

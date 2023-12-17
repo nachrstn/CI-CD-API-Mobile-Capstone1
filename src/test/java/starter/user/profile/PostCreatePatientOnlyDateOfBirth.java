@@ -7,16 +7,16 @@ import java.io.File;
 
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
-public class PutUpdatePatientProfile {
-    protected static String url = "https://dev.reprohealth.my.id/patients/bcd0ef11-33ee-4a6c-9e1a-db95a7926cb6";
+public class PostCreatePatientOnlyDateOfBirth {
+    protected String url = "https://dev.reprohealth.my.id/patients";
 
-    @Step("I set PUT endpoint update patient profile ")
-    public String setPutEndpointUpdatePatientProfile(){
+    @Step("I set POST create new patient with blank body exclude date of birth")
+    public String setPostCreatePatientOnlyDateOfBirth(){
         return url;
     }
 
-    @Step("I send PUT HTTP request update patient profile")
-    public void sendPutRequestUpdatePatientProfile(){
+    @Step("I send POST HTTP request create new patient with blank body exclude date of birth")
+    public void sendPOSTRequestCreatePatientOnlyDateOfBirth(){
         SerenityRest.given()
                 .contentType("multipart/form-data")
                 .multiPart("name", "Komang Ayu")
@@ -32,12 +32,11 @@ public class PutUpdatePatientProfile {
                 .multiPart("telephone_number", "66457478837263")
                 .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJuYW1lIjoiQWFhIiwicm9sZSI6InVzZXIiLCJ1c2VyX2lkIjoiZjRkZjU3YTQtMDRjZi00YjgxLTlhZWYtNThkYmNlNGFhMzdjIn0.YFVpLwaAGIPaRSpBfWiCVvKyYD3fWJeZQ_z-Sg798cE")
                 .when()
-                .put(setPutEndpointUpdatePatientProfile());
+                .post(setPostCreatePatientOnlyDateOfBirth());
     }
 
-    @Step("I receive response code 200 update patient profile")
-    public void resCode200PutUpdatePatientProfile(){
-        restAssuredThat(response -> response.statusCode(200));
+    @Step("I receive response code 400 create new patient with blank body exclude date of birth")
+    public void resCode400CreatePatientOnlyDateOfBirth(){
+        restAssuredThat(response -> response.statusCode(400));
     }
 }
-

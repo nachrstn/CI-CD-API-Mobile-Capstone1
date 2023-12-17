@@ -37,12 +37,18 @@ Feature: Forum
   Scenario: POST - Post create new forum success
     Given I set POST endpoint create new forum
     When I send POST HTTP request create new forum
-    Then I receive response code 200 create new forum
+    Then I receive response code 201 create new forum
 
   Scenario: POST - Post create new forum invalid endpoint
     Given I set POST create new forum invalid endpoint
     When I send POST HTTP request create new forum invalid endpoint
     Then I receive response code 404 create new forum invalid endpoint
+
+
+  Scenario: POST - Post create new forum invalid ID patient
+    Given I set POST create new forum invalid ID patient
+    When I send POST HTTP request create new forum invalid ID patient
+    Then I receive response code 400 create new forum invalid ID patient
 
 
   Scenario: DELETE - Delete forum success

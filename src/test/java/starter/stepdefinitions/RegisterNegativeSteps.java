@@ -11,9 +11,8 @@ public class RegisterNegativeSteps {
     @Steps
     PostRegisterInvalidEndpoint PostRegisterInvalidEndpoint;
     @Steps
-    PostRegisterInvalidMethod PostRegisterInvalidMethod;
-    @Steps
-    PostRegisterInvalidPayload PostRegisterInvalidPayload;
+    PostRegistrationWithRegisteredEmail PostRegistrationWithRegisteredEmail;
+
 
     @Given("I set POST Register invalid endpoint")
     public void setPostRegisterInvalidEndpoint(){
@@ -23,34 +22,23 @@ public class RegisterNegativeSteps {
     public void sendPostHttpRequestRegisterInvalidEndpoint(){
         PostRegisterInvalidEndpoint.sendPostHttpRequestRegisterInvalidEndpoint();
     }
-    @Then("I receive response code 404 for Register")
-    public void responseCode404RegisterInvalidEndpoint(){
-        PostRegisterInvalidEndpoint.responseCode404RegisterInvalidEndpoint();
+    @Then("I receive response code 400 for Register")
+    public void responseCode400RegisterInvalidEndpoint(){
+        PostRegisterInvalidEndpoint.responseCode400RegisterInvalidEndpoint();
     }
 
-    @Given("I set POST Register invalid method")
-    public void setPostRegisterInvalidMethod(){
-        PostRegisterInvalidMethod.setPostRegisterInvalidMethod();
+    @Given("I set POST registration with registered email")
+    public void setPostRegistrationWithRegisteredEmail (){
+        PostRegistrationWithRegisteredEmail.setPostRegistrationWithRegisteredEmail();
     }
-    @When("I send POST HTTP request Register invalid method")
-    public void sendPostHttpRequestRegisterInvalidMethod(){
-        PostRegisterInvalidMethod.sendPostHttpRequestRegisterInvalidMethod();
+    @When("I send POST HTTP request registration with registered email")
+    public void sendPostRequestRegistrationWithRegisteredEmail(){
+        PostRegistrationWithRegisteredEmail.sendPostRequestRegistrationWithRegisteredEmail();
     }
-    @Then("I receive response code 405 for Register invalid method")
-    public void responseCode405RegisterInvalidMethod(){
-        PostRegisterInvalidMethod.responseCode405RegisterInvalidMethod();
+    @Then("I receive response code 400 registration with registered email")
+    public void resCode400PostRegistrationWithRegisteredEmail(){
+        PostRegistrationWithRegisteredEmail.resCode400PostRegistrationWithRegisteredEmail();
     }
 
-    @Given("I set POST Register invalid payload")
-    public void setPostRegisterInvalidPayload(){
-        PostRegisterInvalidPayload.setPostRegisterInvalidPayload();
-    }
-    @When("I send POST HTTP request Register invalid payload")
-    public void sendPostHttpRequestRegisterInvalidPayload(){
-        PostRegisterInvalidPayload.sendPostHttpRequestRegisterInvalidPayload();
-    }
-    @Then("I receive response code 400 for Register invalid payload")
-    public void responseCode400RegisterInvalidPayload(){
-        PostRegisterInvalidPayload.responseCode400RegisterInvalidPayload();
-    }
+
 }

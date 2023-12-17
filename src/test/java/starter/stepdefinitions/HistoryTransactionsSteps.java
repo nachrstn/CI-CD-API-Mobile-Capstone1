@@ -16,6 +16,8 @@ public class HistoryTransactionsSteps {
     PostCreateRefundForPatient PostCreateRefundForPatient;
     @Steps
     PostCreateCancelAppointment PostCreateCancelAppointment;
+    @Steps
+    PutRescheduleApmtByIDPatient PutRescheduleApmtByIDPatient;
 
 
     @Given("I set GET endpoint all transactions")
@@ -41,9 +43,9 @@ public class HistoryTransactionsSteps {
     public void sendPostRequestCreateNewPayment(){
         PostCreateNewPayment.sendPostRequestCreateNewPayment();
     }
-    @Then("I receive response code 200 create new payment")
-    public void resCode200PostCreateNewPayment(){
-        PostCreateNewPayment.resCode200PostCreateNewPayment();
+    @Then("I receive response code 201 create new payment")
+    public void resCode201PostCreateNewPayment(){
+        PostCreateNewPayment.resCode201PostCreateNewPayment();
     }
 
 
@@ -71,9 +73,24 @@ public class HistoryTransactionsSteps {
     public void sendPostRequestCreateCancelAppointment(){
         PostCreateCancelAppointment.sendPostRequestCreateCancelAppointment();
     }
-    @Then("I receive response code 200 create cancel appointment")
-    public void resCode200PostCreateCancelAppointment(){
-        PostCreateCancelAppointment.resCode200PostCreateCancelAppointment();
+    @Then("I receive response code 201 create cancel appointment")
+    public void resCode201PostCreateCancelAppointment(){
+        PostCreateCancelAppointment.resCode201PostCreateCancelAppointment();
+    }
+
+
+
+    @Given("I set PUT reschedule appointment by ID patient")
+    public void setPUTRescheduleApmtByIDPatient(){
+        PutRescheduleApmtByIDPatient.setPUTRescheduleApmtByIDPatient();
+    }
+    @When("I send PUT HTTP request reschedule appointment by ID patient")
+    public void sendPutRequestRescheduleApmtByIDPatient(){
+        PutRescheduleApmtByIDPatient.sendPutRequestRescheduleApmtByIDPatient();
+    }
+    @Then("I receive response code 200 reschedule appointment by ID patient")
+    public void resCode200PutRescheduleApmtByIDPatient(){
+        PutRescheduleApmtByIDPatient.resCode200PutRescheduleApmtByIDPatient();
     }
 
 }

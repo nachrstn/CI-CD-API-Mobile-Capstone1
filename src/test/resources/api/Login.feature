@@ -33,16 +33,25 @@ Feature: Login
     When I send POST HTTP request login empty email
     Then I receive response code 401 login empty email
 
-#
-#  Scenario: PUT - PUT change password success
-#    Given I set PUT endpoint change password
-#    When I send PUT HTTP request change password
-#    Then I receive response code 200 change password
-#
-#  Scenario: PUT - PUT change password invalid endpoint
-#    Given I set PUT change password invalid endpoint
-#    When I send PUT HTTP request change password invalid endpoint
-#    Then I receive response code 404 change password invalid endpoint
 
+  Scenario: PUT - PUT change password success
+    Given I set PUT endpoint change password
+    When I send PUT HTTP request change password
+    Then I receive response code 200 change password
+
+  Scenario: PUT - PUT change password invalid endpoint
+    Given I set PUT change password invalid endpoint
+    When I send PUT HTTP request change password invalid endpoint
+    Then I receive response code 404 change password invalid endpoint
+
+  Scenario: PUT - Put Send OTP success
+    Given I set PUT Send OTP
+    When I send PUT HTTP request Send OTP
+    Then I receive response code 200 Send OTP
+
+  Scenario: PUT - Put Send OTP unregistered email
+    Given I set PUT Send OTP unregistered email
+    When I send PUT HTTP request Send OTP unregistered email
+    Then I receive response code 400 Send OTP unregistered email
 
 

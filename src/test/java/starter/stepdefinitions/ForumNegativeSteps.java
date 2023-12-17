@@ -23,7 +23,8 @@ public class ForumNegativeSteps {
     PostCreateNewForumInvalidEndpoint PostCreateNewForumInvalidEndpoint;
     @Steps
     DeleteForumInvalidEndpoint DeleteForumInvalidEndpoint;
-
+    @Steps
+    PostCreateNewForumInvalidIDPatient PostCreateNewForumInvalidIDPatient;
 
 
 
@@ -136,6 +137,18 @@ public class ForumNegativeSteps {
     }
 
 
+    @Given("I set POST create new forum invalid ID patient")
+    public void setPostCreateNewForumInvalidIDPatient(){
+        PostCreateNewForumInvalidIDPatient.setPostCreateNewForumInvalidIDPatient();
+    }
+    @When("I send POST HTTP request create new forum invalid ID patient")
+    public void sendPOSTRequestCreateNewForumInvalidIDPatient(){
+        PostCreateNewForumInvalidIDPatient.sendPOSTRequestCreateNewForumInvalidIDPatient();
+    }
+    @Then("I receive response code 400 create new forum invalid ID patient")
+    public void resCode400CreateNewForumInvalidIDPatient(){
+        PostCreateNewForumInvalidIDPatient.resCode400CreateNewForumInvalidIDPatient();
+    }
 
 
 

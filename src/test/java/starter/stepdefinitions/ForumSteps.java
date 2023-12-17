@@ -93,9 +93,9 @@ public class ForumSteps {
     public void sendPostRequestCreateNewForum(){
         PostCreateNewForum.sendPostRequestCreateNewForum();
     }
-    @Then("I receive response code 200 create new forum")
-    public void resCode200PostCreateNewForum(){
-        PostCreateNewForum.resCode200PostCreateNewForum();
+    @Then("I receive response code 201 create new forum")
+    public void resCode201PostCreateNewForum(){
+        PostCreateNewForum.resCode201PostCreateNewForum();
     }
 
 

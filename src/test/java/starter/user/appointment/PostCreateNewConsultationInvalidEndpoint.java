@@ -8,7 +8,7 @@ import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 
 public class PostCreateNewConsultationInvalidEndpoint {
-    protected static String url = "https://dev.reprohealth.my.id/consultations";
+    protected static String url = "https://dev.reprohealth.my.id/consultati0ns";
 
     @Step("I set POST create new consultation invalid endpoint")
     public String setPostCreateNewConsultationInvalidEndpoint(){
@@ -26,6 +26,7 @@ public class PostCreateNewConsultationInvalidEndpoint {
 
         SerenityRest.given()
                 .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJuYW1lIjoiQWFhIiwicm9sZSI6InVzZXIiLCJ1c2VyX2lkIjoiZjRkZjU3YTQtMDRjZi00YjgxLTlhZWYtNThkYmNlNGFhMzdjIn0.YFVpLwaAGIPaRSpBfWiCVvKyYD3fWJeZQ_z-Sg798cE")
+                .contentType("application/json")
                 .body(requestBody.toJSONString())
                 .post(setPostCreateNewConsultationInvalidEndpoint());
     }

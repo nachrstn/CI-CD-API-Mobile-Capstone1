@@ -18,9 +18,9 @@ public class PostRegister {
     @Step("I send POST HTTP request Register")
     public void sendPostHttpRequestRegisterEndpoint(){
         JSONObject requestBody = new JSONObject();
-        requestBody.put("email", "new3@gmail.com");
-        requestBody.put("name", "new");
-        requestBody.put("password", "123123");
+        requestBody.put("email", "new4@gmail.com");
+        requestBody.put("name", "New");
+        requestBody.put("password", "New111224");
 
 
         SerenityRest.given()

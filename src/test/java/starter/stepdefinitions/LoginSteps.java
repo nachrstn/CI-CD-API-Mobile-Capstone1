@@ -12,6 +12,11 @@ public class LoginSteps {
     PostLogin PostLogin;
     @Steps
     PutChangePassword PutChangePassword;
+    @Steps
+    PutSendOTP PutSendOTP;
+    @Steps
+    PutSendOTPUnregisteredEmail PutSendOTPUnregisteredEmail;
+
 
 
 
@@ -42,5 +47,30 @@ public class LoginSteps {
         PutChangePassword.resCode200PutChangePassword();
     }
 
+    @Given("I set PUT Send OTP")
+    public void setPUTSendOTP(){
+        PutSendOTP.setPUTSendOTP();
+    }
+    @When("I send PUT HTTP request Send OTP")
+    public void sendPutRequestSendOTP(){
+        PutSendOTP.sendPutRequestSendOTP();
+    }
+    @Then("I receive response code 200 Send OTP")
+    public void resCode200PutSendOTP(){
+        PutSendOTP.resCode200PutSendOTP();
+    }
+
+    @Given("I set PUT Send OTP unregistered email")
+    public void setPutSendOTPUnregisteredEmail(){
+        PutSendOTPUnregisteredEmail.setPutSendOTPUnregisteredEmail();
+    }
+    @When("I send PUT HTTP request Send OTP unregistered email")
+    public void sendPutRequestSendOTPUnregisteredEmail(){
+        PutSendOTPUnregisteredEmail.sendPutRequestSendOTPUnregisteredEmail();
+    }
+    @Then("I receive response code 400 Send OTP unregistered email")
+    public void resCode400PutSendOTPUnregisteredEmail(){
+        PutSendOTPUnregisteredEmail.resCode400PutSendOTPUnregisteredEmail();
+    }
 
 }

@@ -11,7 +11,6 @@ public class AppointmentNegativeSteps {
 
     @Steps
     GetAllSpecialistInvalidEndpoint GetAllSpecialistInvalidEndpoint;
-
     @Steps
     GetAllClinicsInvalidEndpoint GetAllClinicsInvalidEndpoint;
     @Steps
@@ -28,6 +27,13 @@ public class AppointmentNegativeSteps {
     PostCreateNewClinicsInvalidEndpoint PostCreateNewClinicsInvalidEndpoint;
     @Steps
     PostCreateNewConsultationInvalidEndpoint PostCreateNewConsultationInvalidEndpoint;
+    @Steps
+    PostCreateNewConsultationInvalidSession PostCreateNewConsultationInvalidSession;
+    @Steps
+    PostCreateNewConsultationInvalidIDdoctor PostCreateNewConsultationInvalidIDdoctor;
+    @Steps
+    PostCreateNewConsultationInvalidIDPatient PostCreateNewConsultationInvalidIDPatient;
+
 
 
 
@@ -166,11 +172,6 @@ public class AppointmentNegativeSteps {
 
 
 
-
-
-
-
-
     @Given("I set POST create new consultation invalid endpoint")
     public void setPostCreateNewConsultationInvalidEndpoint(){
         PostCreateNewConsultationInvalidEndpoint.setPostCreateNewConsultationInvalidEndpoint();
@@ -184,6 +185,44 @@ public class AppointmentNegativeSteps {
         PostCreateNewConsultationInvalidEndpoint.resCode404PostCreateNewConsultationInvalidEndpoint();
     }
 
+    @Given("I set POST create new consultation invalid session")
+    public void setPostCreateNewConsultationInvalidSession(){
+        PostCreateNewConsultationInvalidSession.setPostCreateNewConsultationInvalidSession();
+    }
+    @When("I send POST HTTP request create new consultation invalid session")
+    public void sendPostRequestCreateNewConsultationInvalidSession(){
+        PostCreateNewConsultationInvalidSession.sendPostRequestCreateNewConsultationInvalidSession();
+    }
+    @Then("I receive response code 400 create new consultation invalid session")
+    public void resCode400PostCreateNewConsultationInvalidSession(){
+        PostCreateNewConsultationInvalidSession.resCode400PostCreateNewConsultationInvalidSession();
+    }
+
+    @Given("I set POST create new consultation invalid ID doctor")
+    public void setPostCreateNewConsultationInvalidIDdoctor (){
+        PostCreateNewConsultationInvalidIDdoctor.setPostCreateNewConsultationInvalidIDdoctor();
+    }
+    @When("I send POST HTTP request create new consultation invalid ID doctor")
+    public void sendPostRequestCreateNewConsultationInvalidIDdoctor(){
+        PostCreateNewConsultationInvalidIDdoctor.sendPostRequestCreateNewConsultationInvalidIDdoctor();
+    }
+    @Then("I receive response code 400 create new consultation invalid ID doctor")
+    public void resCode400PostCreateNewConsultationInvalidIDdoctor(){
+        PostCreateNewConsultationInvalidIDdoctor.resCode400PostCreateNewConsultationInvalidIDdoctor();
+    }
+
+    @Given("I set POST create new consultation invalid ID patient")
+    public void setPostCreateNewConsultationInvalidIDPatient(){
+        PostCreateNewConsultationInvalidIDPatient.setPostCreateNewConsultationInvalidIDPatient();
+    }
+    @When("I send POST HTTP request create new consultation invalid ID patient")
+    public void sendPOSTRequestCreateNewConsultationInvalidIDPatient(){
+        PostCreateNewConsultationInvalidIDPatient.sendPOSTRequestCreateNewConsultationInvalidIDPatient();
+    }
+    @Then("I receive response code 400 create new consultation invalid ID patient")
+    public void resCode400CreateNewConsultationInvalidIDPatient(){
+        PostCreateNewConsultationInvalidIDPatient.resCode400CreateNewConsultationInvalidIDPatient();
+    }
 
 
 

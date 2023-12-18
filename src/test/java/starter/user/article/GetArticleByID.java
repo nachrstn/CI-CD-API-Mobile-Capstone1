@@ -6,7 +6,7 @@ import net.thucydides.core.annotations.Step;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class GetArticleByID {
-    protected static String url = "https://dev.reprohealth.my.id/articles/0f068f7e-de24-446e-b3a6-0a53b9784b82";
+    protected static String url = "https://dev.reprohealth.my.id/articles/0ab056c2-e702-43c7-9d58-0dcd2284f51b";
 
     @Step("I set GET endpoint article by ID")
     public String setGetEndpointArticleByID(){

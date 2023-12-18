@@ -7,7 +7,7 @@ import org.json.simple.JSONObject;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class DeletePatientByID {
-    protected static String url = "https://dev.reprohealth.my.id/patients/5f4d19e6-be16-4550-8238-495fcd8e9c06";
+    protected static String url = "https://dev.reprohealth.my.id/patients/0f19bc09-ee54-4e51-8c25-d1f0c51587c8";
 
     @Step("I set DELETE endpoint patient by id ")
     public String setDeleteEndpointPatientByID(){

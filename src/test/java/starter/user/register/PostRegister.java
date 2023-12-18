@@ -18,9 +18,9 @@ public class PostRegister {
     @Step("I send POST HTTP request Register")
     public void sendPostHttpRequestRegisterEndpoint(){
         JSONObject requestBody = new JSONObject();
-        requestBody.put("email", "new4@gmail.com");
-        requestBody.put("name", "New");
-        requestBody.put("password", "New111224");
+        requestBody.put("email", "Ana1@gmail.com");
+        requestBody.put("name", "Ana");
+        requestBody.put("password", "Ana111222");
 
 
         SerenityRest.given()
@@ -36,6 +36,6 @@ public class PostRegister {
 
     @Step("I receive valid data for Register")
     public void receiveValidDataForRegister(){
-        restAssuredThat(response -> response.body("response.name", equalTo("new")));
+        restAssuredThat(response -> response.body("response.name", equalTo("Ana")));
     }
 }

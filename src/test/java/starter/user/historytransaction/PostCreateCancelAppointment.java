@@ -7,7 +7,7 @@ import org.json.simple.JSONObject;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class PostCreateCancelAppointment {
-    protected static String url = "https://dev.reprohealth.my.id/transactions/c38882d0-c838-463d-a77e-e0d5cd6403b2/cancel";
+    protected static String url = "https://dev.reprohealth.my.id/transactions/4d590cb4-5537-4402-9f7c-bc4a4cd40a37/cancel";
 
     @Step("I set POST endpoint create cancel appointment ")
     public String setPostEndpointCreateCancelAppointment(){

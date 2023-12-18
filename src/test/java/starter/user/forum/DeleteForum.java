@@ -6,7 +6,7 @@ import net.thucydides.core.annotations.Step;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class DeleteForum {
-    protected static String url = "https://dev.reprohealth.my.id/forums/0b103112-eb92-4efd-a838-0f982c2c35e3";
+    protected static String url = "https://dev.reprohealth.my.id/forums/1fddd7cb-bd8b-48de-85e2-906c94c2922a";
 
     @Step("I set DELETE endpoint forum ")
     public String setDeleteEndpointForum(){

@@ -23,12 +23,12 @@ Feature: History Transaction
     When I send POST HTTP request create new payment invalid endpoint
     Then I receive response code 404 create new payment invalid endpoint
 
-  Scenario: PUT - Put reschedule appointment by ID patient success
+  Scenario: PUT - Put reschedule appointment success
     Given I set PUT reschedule appointment by ID patient
     When I send PUT HTTP request reschedule appointment by ID patient
     Then I receive response code 200 reschedule appointment by ID patient
 
-  Scenario: PUT - Put reschedule appointment by ID patient invalid endpoint
+  Scenario: PUT - Put reschedule appointment invalid endpoint
     Given I set PUT reschedule appointment by ID patient invalid endpoint
     When I send PUT HTTP request reschedule appointment by ID patient invalid endpoint
     Then I receive response code 404 reschedule appointment by ID patient invalid endpoint

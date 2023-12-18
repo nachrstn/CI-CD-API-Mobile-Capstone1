@@ -7,7 +7,7 @@ import org.json.simple.JSONObject;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class PutRescheduleApmtByIDPatient {
-    protected static String url = "https://dev.reprohealth.my.id/transactions/470fd563-ffe4-4648-a914-2a0de3c79e1f/reschedule";
+    protected static String url = "https://dev.reprohealth.my.id/transactions/4d590cb4-5537-4402-9f7c-bc4a4cd40a37/reschedule";
 
     @Step("I set PUT reschedule appointment by ID patient ")
     public String setPUTRescheduleApmtByIDPatient(){

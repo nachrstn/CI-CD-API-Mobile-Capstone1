@@ -8,7 +8,7 @@ import java.io.File;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class PostCreateNewPayment {
-    protected static String url = "https://dev.reprohealth.my.id/transactions/47cc9bd5-9421-450a-98fc-3ec01e327dc6/payments";
+    protected static String url = "https://dev.reprohealth.my.id/transactions/4d590cb4-5537-4402-9f7c-bc4a4cd40a37/payments";
 
     @Step("I set POST endpoint create new payment ")
     public String setPostEndpointCreateNewPayment(){
